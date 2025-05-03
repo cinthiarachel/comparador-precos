@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de preços</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Comparador de Preços por Medida</h1>
+        
+        <div id="products-container">
+            <div class="product" id="product-1">
+                <h3>Produto 1</h3>
+                <div class="input-group">
+                    <label for="product-name-1">Nome do Produto</label>
+                    <input type="text" id="product-name-1" placeholder="Produto">
+                </div>
+                <div class="input-group">
+                    <label for="product-quantity-1">Quantidade</label>
+                    <input type="number" id="product-quantity-1" step="0.01" min="0.01">
+                </div>
+                <div class="input-group">
+                    <label for="product-unit-1">Unidade de Medida</label>
+                    <select id="product-unit-1">
+                        <option value="ml">Mililitros (ml)</option>
+                        <option value="l">Litros (l)</option>
+                        <option value="g">Gramas (g)</option>
+                        <option value="kg">Quilogramas (kg)</option>
+                        <option value="un">Unidades</option>
+                        <option value="m">Metros (m)</option>
+                        <option value="cm">Centímetros (cm)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="product-price-1">Preço (R$)</label>
+                    <input type="number" id="product-price-1" step="0.01" min="0.01">
+                </div>
+                <button class="remove-product" onclick="removeProduct(1)">Remover Produto</button>
+            </div>
+            
+            <div class="product" id="product-2">
+                <h3>Produto 2</h3>
+                <div class="input-group">
+                    <label for="product-name-2">Nome do Produto</label>
+                    <input type="text" id="product-name-2" placeholder="Produto 2">
+                </div>
+                <div class="input-group">
+                    <label for="product-quantity-2">Quantidade</label>
+                    <input type="number" id="product-quantity-2" step="0.01" min="0.01">
+                </div>
+                <div class="input-group">
+                    <label for="product-unit-2">Unidade de Medida</label>
+                    <select id="product-unit-2">
+                        <option value="ml" selected>Mililitros (ml)</option>
+                        <option value="l">Litros (l)</option>
+                        <option value="g">Gramas (g)</option>
+                        <option value="kg">Quilogramas (kg)</option>
+                        <option value="un">Unidades</option>
+                        <option value="m">Metros (m)</option>
+                        <option value="cm">Centímetros (cm)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="product-price-2">Preço (R$)</label>
+                    <input type="number" id="product-price-2" step="0.01" min="0.01">
+                </div>
+                <button class="remove-product" onclick="removeProduct(2)">Remover Produto</button>
+            </div>
+        </div>
+        
+        <button class="add-product" onclick="addProduct()">+ Adicionar outro produto</button>
+        <button id="calculate">Calcular Melhor Opção</button>
+        
+        <div id="results" class="results">
+            <h2>Resultado da Comparação</h2>
+            <div id="results-container"></div>
+            <div id="best-option" class="best-option"></div>
+        </div>
+    </div>
+    <footer>
+        <p>Desenvolvido por Cinthia Rachel</p>
+    </footer>
+</body>
+</html>
